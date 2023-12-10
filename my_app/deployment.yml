@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my_app
+  template:
+    metadata:
+      labels:
+        app: my_app
+    spec:
+      containers:
+      - name: my_app-container
+        image: my_app-frontend:latest
+
